@@ -1,0 +1,90 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Сравнение товаров</title>
+  </head>
+  <body>
+    <h1>Сравнение товаров</h1>
+
+    <ul id="products-list"></ul>
+
+    <script>
+      const selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [];
+
+      const comparisonList = document.getElementById('products-list');
+
+      // If there are no selected products, display a message
+      if (selectedProducts.length === 0) {
+        const message = document.createElement('p');
+        message.textContent = 'Нет выбранных товаров для сравнения';
+        comparisonList.appendChild(message);
+      } else {
+        // Create an <li> element for each selected product and add it to the comparison list
+        selectedProducts.forEach(productId => {
+          const product = document.querySelector(`[data-sb-id-or-vendor-code="${productId}"]`);
+          const productName = product.getAttribute('data-sb-product-name');
+          const productPrice = product.getAttribute('data-sb-product-price');
+          const productQuantity = product.getAttribute('data-sb-product-quantity');
+          const productImg = product.getAttribute('data-sb-product-img');
+
+          const listItem = document.createElement('li');
+
+          const productImgElement = document.createElement('img');
+          productImgElement.src = productImg;
+          productImgElement.alt = productName;
+          productImgElement.width = 125;
+          productImgElement.height = 125;
+          listItem.appendChild(productImgElement);
+
+          const productNameElement = document.createElement('h3');
+          productNameElement.textContent = productName;
+          listItem.appendChild(productNameElement);
+
+          const productPriceElement = document.createElement('p');
+          productPriceElement.textContent = `Цена: ${productPrice} рублей`;
+          listItem.appendChild(productPriceElement);
+
+          const productQuantityElement = document.createElement('p');
+          productQuantityElement.textContent = `Количество: ${productQuantity}`;
+          listItem.appendChild(productQuantityElement);
+
+          comparisonList.appendChild(listItem);
+        });
+      }
+    </script>
+  </body>
+</html>
+
+       -->
+
+       <!DOCTYPE html>
+<html>
+<head>
+    <!-- Ваш код заголовка страницы -->
+    <style>
+       
+    .product-card.selected {
+        border: 2px solid red; /* Пример стиля для выделения выбранных товаров */
+    }
+
+    #comparison-container {
+        border: 1px solid gray; /* Пример стиля для контейнера сравнения */
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+
+    </style>
+</head>
+<body>
+    <!-- Ваша существующая разметка товаров -->
+
+    <div id="comparison-container">
+        <!-- Здесь будут отображаться выбранные товары для сравнения -->
+    </div>
+
+    <script>
+        // Ваш скрипт JavaScript
+    </script>
+</body>
+</html>

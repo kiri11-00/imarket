@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Главная страница интернет-магазин + каталог</title>
+        
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/base.css" />
+        <link rel="stylesheet" href="./css/main.css" />
+    </head>
+    <body>
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <div class="logo">
+                    <a href="statia.html"> <img src="гардероб.jpg"/></a>
+
+                    
+                </div>
+            </div>
+
+            <nav class="sidebar-nav nav">
+                <ul class="nav-title">
+                    <li><a href="#"> Каталог</a>
+                <ul>
+                    <li><a href="#"> Мужское    </a>
+                        <ul>
+                            <li><a href="#">  Пиджаки </a>
+                            <ul>
+                                <li><a href="katalog.html"> Смокинги  </a></li>
+                                   </ul>
+                        </li>
+                            <li><a href="#"> Ботинки</a>
+                                <ul>
+                                    <li><a href="katalog.html"> Зимние </a></li>
+                                    <li><a href="katalog.html"> Осенние</a></li>
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li><a href="#"> Женское</a>
+                        <ul>
+                            <li><a href="#"> Пальто </a>
+                                <ul>
+                                <li><a href="katalog.html"> Зимнее </a></li>
+                                <li><a href="katalog.html"> Летнее</a></li>
+                            </ul>
+                        </li>
+                            <li><a href="#"> Сапоги</a>
+                                <ul>
+                                    <li><a href="katalog.html"> Весенние </a></li>
+                                    <li><a href="katalog.html"> Осенние</a></li>
+                                </ul>
+                            </li>
+                            
+                        </ul></li>
+                </ul>
+            </li>
+            </ul>
+            </nav>
+              <div class="sidebar-help">
+                <ul id="menu">
+       <li><a class="help-icon" href="https://t.me/suppliers_clothes"> <img src="telegram.jpg"/></a></li>
+       <li><a class="help-icon" href="https://www.instagram.com/shopstyle_belarus/"> <img src="nstagram.png"/></a>  </li>
+    </ul>
+    <a> Контактный телефон:</a>
+        <a>а(1): +375291598826;
+        МТС:+3752569874.</a>
+              </div>
+            </div>
+
+        <main class="main">
+            <header class="header">
+
+                <!-- header-search -->
+                <div class="header-search">
+
+                    <!-- <form class="search">
+                        <label class="search-label">
+                            <img class="search-icon" src="лупа.png" alt="Search" />
+                            <input class="search-input" type="text" placeholder="Искать..." />
+                        </label>
+                    </form> -->
+                    <form class="search">
+                    <form action="#">
+                        <label for="search">Поиск товара:</label>
+                        <input type="text" id="search" name="search">
+                        <button type="submit">Найти</button>
+                      </form>
+                    </form>
+                    <script>
+                        const form = document.querySelector('form');
+                        form.addEventListener('submit', function(event) {
+                          event.preventDefault(); // предотвращаем отправку формы
+                          const searchInput = document.querySelector('#search');
+                          if (searchInput.value.toLowerCase() === 'ботинки') {
+                            window.location.href = 'botinki.html';}
+                            if (searchInput.value.toLowerCase() === 'сапоги') {
+                            window.location.href = 'sapogi.html';}
+                            if (searchInput.value.toLowerCase() === 'пиджак') {
+                            window.location.href = 'pidjag.html';}
+                            if (searchInput.value.toLowerCase() === 'пальто') {
+                            window.location.href = 'palto.html';}
+
+                            
+                        });
+                      </script>
+                      
+
+
+                </div>
+                <!-- // header-search  -->
+
+                <!-- header-links -->
+                <div class="заголовки-ссылки">
+                    <nav class="nav-header">
+                        <ul class="nav-header-list" >
+                            <li class="nav-header-link-text active"><a href="#">Товары</a></li>
+                            <li class="nav-header-link-icon"> <a href="корзинар1.html"><img src="корзина.png" alt="Cart" width="24" height="24" viewBox="0 0 24 24" fill="none"/></a> </li>
+                            <li class="nav-header-link-icon">
+                                
+                                <a href="form.html"><img src="персона.png" alt="Cart"  width="24" height="24" viewBox="0 0 24 24" fill="none" ></a> </li>
+                            <li class="nav-header-link-icon"><a href="#"><img src="весы.webp" alt="Cart"  width="24" height="24" viewBox="0 0 24 24" fill="none"/></a> </li>
+                            
+                            <li class="nav-header-link-icon">
+                            <div id="zatemnenie2">
+                                <div id="okno2">
+                                    <ol>
+                                        <li>Как вам наш сайт?</li>
+                                        <li>Вам нравится продукция представленная на сайте?</li>
+                                        <li>Достаточно ли велик ассортимент?</li>
+                                        <li>Вы заходили на наш инстаграм-аккаунт?</li>
+                                        <li>Что вам запомнилось?</li>
+                                        <li><a href="#">Оставить отзыв...</a><input class="search-input" type="text" placeholder="Отзыв..." /></li>
+                                        <li><a href="form.html" ><p style="color:#3700ff">Войти и Отправить</p></a></li>
+                                    </ol>
+                                 
+                                </div>
+                              </div>
+                            <a href="#zatemnenie2"><img src="отзыв.png" alt="Cart"  width="24" height="24"  fill="none" ></a> </li>
+                        </ul>
+
+                    </nav>
+                </div>
+                <!-- // header-links -->
+
+            </header>
+
+            <div class="cards-wrapper">
+                <!-- row -->
+                <div class="cards-wrapper-row">
+                    <!-- col -->
+                    <div class="cards-wrapper-col col-vertical">
+                        <a href="#" class="card card-horizontal card-sale" style="background-image: url('./../фонод.jpg');">
+                            <span>СКИДКА 50%</span>
+                        </a>
+
+                        <a href="#" class="card card-horizontal card-sale" style="background-image: url('./../sale2.jfif');">
+</a>
+                    </div>
+                    <!-- // col -->
+                    <!-- col -->
+                    <div class="cards-wrapper-col col-horizontal">
+
+                        <div class="card card-vertical card-product">
+                                                        <a class="card-product-link" href="#">
+                                <img class="card-product-img" src="add2.jpg" alt="Product">
+                            </a>
+                        </div>
+
+                        <div class="card card-vertical card-product">
+                            
+                            <a class="card-product-link" href="#">
+                                <img class="card-product-img" src="тетя.jfif" alt="Product">
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- // col -->
+                </div>
+                <!-- // row -->
+                <!-- row -->
+                <div class="cards-wrapper-row">
+                    <!-- col -->
+                    <div class="cards-wrapper-col col-horizontal">
+
+                        <div class="card card-vertical card-product">
+                            <a class="card-product-link" href="#">
+                                <img class="card-product-img" src="a1_1.jpg" alt="Product">
+                            </a>
+                        </div>
+
+                        <div class="card card-vertical card-product">
+                            
+                            <a class="card-product-link" href="#">
+                                <img class="card-product-img" src="./img/cards/winter.jpg" alt="Product">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- // col -->
+                    <!-- col -->
+                    <div class="cards-wrapper-col col-vertical">
+
+                        <a href="#" class="card card-horizontal card-section" style="background-image: url('./../add3333.jpeg');">
+                            <h4 class="card-section-title">Trending & Hot</h4>
+                            <p class="card-section-desc">Коллекция самых трендовых вещей.</p>
+                        </a>
+
+                        <a href="#" class="card card-horizontal card-section card-section-red" style="background-image: url('./../img/cards/card-6.jpg');">
+                            <h4 class="card-section-title">Купите его в первый раз</h4>
+                            <p class="card-section-desc">Новое поступление. Не упусти! </p>
+                        </a>
+
+                    </div>
+                    <!-- // col -->
+                </div>
+                <!-- // row -->
+            </div>
+
+ 
+
+        </main>
+    </body>
+</html>
+

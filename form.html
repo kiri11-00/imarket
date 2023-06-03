@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Форма входа</title>
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./main3.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+ 
+</head>
+<body>
+  
+ 
+          <script>
+            function saveRegistrationData() {
+             console.log("Функция saveRegistrationData() вызвана");
+        // получаем значения полей формы
+        const firstName = document.getElementById("first-name").value;
+        const lastName = document.getElementById("last-name").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+      
+        // Проверяем, что все поля заполнены
+        if (firstName.trim() === "" || lastName.trim() === "" || email.trim() === "" || password.trim() === "") {
+          alert("Пожалуйста, заполните все обязательные поля");
+          return;
+        }
+      
+        // Проверяем корректность заполнения электронной почты
+        const emailRegex = /^\S+@\S+\.\S+$/; // Простой регулярный выражение для проверки формата электронной почты
+        if (!emailRegex.test(email)) {
+          alert("Пожалуйста, введите корректный адрес электронной почты");
+          return;
+        }
+      
+        // Проверяем корректность заполнения пароля
+        if (password.length < 8) {
+          alert("Пароль должен содержать не менее 6 символов");
+          return;
+        }
+      
+        // Проверяем наличие уже зарегистрированного клиента с такими именем и фамилией
+        const registeredUsers = JSON.parse(localStorage.getItem("registeredUsers")) || [];
+        const existingUser = registeredUsers.find(user => user.firstName === firstName && user.lastName === lastName);
+        if (existingUser) {
+          alert("Такой клиент уже зарегистрирован");
+          return;
+        }
+      
+        // добавляем нового клиента в список зарегистрированных и сохраняем в localStorage
+        const newUser = { firstName, lastName, email, password };
+        registeredUsers.push(newUser);
+        localStorage.setItem("registeredUsers", JSON.stringify(registeredUsers));
+        alert("Регистрация прошла успешно!");
+      }
+      
+       // добавляем обработчик события для кнопки регистрации
+       const registerBtn = document.querySelector("#register-btn");
+      registerBtn.addEventListener("click", function(event) {
+        event.preventDefault();
+        saveRegistrationData();
+      });
+      
+      </script>
+        </div>
+      </div>
+
+      
+
+
+<div id="zatemnenie3">
+        <div id="okno3">
+         
+          
+            <label>Ваш электронный адрес:</label>
+            <input type="email" name="email" required><br><br>
+            <input type="submit" name="forgot" value="Отправить">
+        </form>
+          <a href="#" class="close">Закрыть окно</a>
+        </div>
+      </div>
+     
+      
+    </form>
+  </div>
+  
+  
+
+
+<script>
+
+// функция для проверки введенных данных и вывода результата на экран
+function checkLoginData() {
+  // получаем значения полей формы
+  const firstName = document.getElementById("first-name1").value;
+  const password = document.getElementById("password1").value;
+
+  // получаем список зарегистрированных пользователей из localStorage
+  const registeredUsers = JSON.parse(localStorage.getItem("registeredUsers")) || [];
+
+  // проверяем наличие пользователя с введенным логином и паролем
+  const foundUser = registeredUsers.find(user => user.firstName === firstName && user.password === password);
+  if (foundUser) {
+    // если пользователь найден, выводим его фамилию и имя
+    alert(`Добро пожаловать, ${foundUser.firstName} !`);
+    window.location.href = "page1.html";
+  } else {
+    // если пользователь не найден, выводим сообщение об ошибке
+    alert("Введенные данные неверны");
+  }
+}
+
+// добавляем обработчик события для кнопки входа
+const vhod = document.querySelector("#vhod-btn");
+vhod.addEventListener("click", function(event) {
+  event.preventDefault();
+  checkLoginData();
+
+});
+
+
+
+// Подключаем библиотеку SMTP.js
+const { Email } = require("smtp-js");
+
+// Обработчик события для кнопки "Отправить на почту"
+ const forgot = document.getElementById("#forgot").addEventListener("click", function (event) {
+  // Получаем значение поля "email"
+  const email = document.getElementById("email").value;
+  const message = `Для восстановления пароля пользователя с логином ${firstName} и ${password}`
+  // Настройки для отправки письма через Mail.ru
+  const config = {
+    // Сервер и порт для отправки письма через Mail.ru
+    host: "smtp.mail.ru",
+    port: 465,
+    // Учетные данные Mail.ru
+    user: "kiri11-00@mail.ru",
+    pass: "RtkyYqZE4AxvWfgcqme7",
+    // Информация о письме
+    from: "kiri11-00@mail.ru",
+    to: email,
+    subject: 'Восстановление пароля', // Тема сообщения
+ text: message // Текст сообщения
+  };
+
+  // Отправляем письмо
+  Email.send(config).then(
+    message => alert('Письмо отправлено!'),
+    error => console.error(error)
+  );
+});
+</script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
